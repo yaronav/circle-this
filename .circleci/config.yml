@@ -19,7 +19,12 @@ jobs:
           command: "echo branch is: << pipeline.git.branch >>"
       - run:
           name: "Print commit title"
-          command: "echo branch is: << pipeline.trigger_parameters.github_app.commit_title >>"
+          command: "echo commit title is: << pipeline.trigger_parameters.github_app.commit_title >>"
+      - run:
+          name: "Print commit message"
+          command: "echo commit msg is: << pipeline.trigger_parameters.github_app.commit_message >>"
+          
+
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
